@@ -1,9 +1,12 @@
+
 import { useState, useEffect } from 'react';
 import { Book, BookDraft, CategoryDef } from '../types';
 import { initialBooks, initialCategories } from '../data/initialData';
 
-const STORAGE_KEY = 'ai-library-books-v16'; 
-const CATEGORIES_KEY = 'ai-library-categories-tree-v16'; 
+// 當您大幅更新 initialData.ts 並希望所有人都能看到最新內容時，請提升這裡的版本號（例如 v18 -> v19）
+// 這會強制程式忽略舊的瀏覽器暫存，重新載入 initialData.ts 內的資料。
+const STORAGE_KEY = 'ai-library-books-v19'; 
+const CATEGORIES_KEY = 'ai-library-categories-tree-v19'; 
 
 export const useLibrary = () => {
   const [books, setBooks] = useState<Book[]>([]);
@@ -34,12 +37,15 @@ export const useLibrary = () => {
                 console.error("Failed to parse categories", e);
             }
         }
+        
+        // 如果瀏覽器沒有暫存資料，就直接從您提供的 initialData.ts 載入
         if (!hasLocalData || loadedBooks.length === 0) {
             loadedBooks = initialBooks;
         }
         if (loadedCategories.length === 0) {
              loadedCategories = initialCategories;
         }
+        
         setBooks(loadedBooks);
         setCategories(loadedCategories);
         setIsLoading(false);

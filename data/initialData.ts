@@ -1,6 +1,6 @@
 
-import { Book, CategoryDef } from '@/types';
-import { createBook, createSeries } from '@/utils/bookFactory';
+import { Book, CategoryDef } from '../types';
+import { createBook, createSeries } from '../utils/bookFactory';
 
 /**
  * 這裡是您的「永久資料庫」。
@@ -96,6 +96,36 @@ export const initialBooks: Book[] = [
     "https://www.tongli.com.tw/ComicImages/Images/NJ0039/NJ0039001/NJ0039001.jpg"
   ),
   createBook(
+    "春夏秋冬代行者 春之舞 上",
+    "曉佳奈",
+    "春夏秋冬代行者",
+    "season-spring-1"
+  ),
+  createBook(
+    "春夏秋冬代行者 春之舞 下",
+    "曉佳奈",
+    "春夏秋冬代行者",
+    "season-spring-2"
+  ),
+  createBook(
+    "春夏秋冬代行者 曉之射手",
+    "曉佳奈",
+    "春夏秋冬代行者",
+    "season-archer"
+  ),
+  createBook(
+    "春夏秋冬代行者 夏之舞 上",
+    "曉佳奈",
+    "春夏秋冬代行者",
+    "season-summer-1"
+  ),
+  createBook(
+    "春夏秋冬代行者 夏之舞 下",
+    "曉佳奈",
+    "春夏秋冬代行者",
+    "season-summer-2"
+  ),
+  createBook(
     "おとなしそうな男子のとんでもない秘密を知ってしまった 2",
     "カシバ",
     "おとなしそうな男子のとんでもない秘密を知ってしまった",
@@ -114,8 +144,26 @@ export const initialBooks: Book[] = [
     "我的不起眼未婚妻在家有夠可愛",
     "jimokawa-4"
   ),
-  
-  // --- 新增系列 (輕小說) ---
+  createBook(
+    "非專業私刑 1",
+    "CRG/金圭森",
+    "非專業私刑",
+    "vigilante-1"
+  ),
+  createBook(
+    "she is beautiful 1",
+    "江坂純/凸ノ高秀",
+    "she is beautiful",
+    "she-beautiful-1"
+  ),
+  createBook(
+    "香格里拉 1",
+    "硬梨菜/不二涼介",
+    "香格里拉",
+    "shangrila-1"
+  ), // <--- 修正：原本這裡少了逗號，導致整個 JS 崩潰
+
+  // --- 系列書籍 (使用 createSeries 壓縮) ---
 
   ...createSeries({
     title: "刀劍神域",
@@ -141,24 +189,16 @@ export const initialBooks: Book[] = [
     volumes: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
     covers: {
       1: "https://www.tongli.com.tw/ComicImages/Images/NY0018/NY0018001/NY0018001.jpg"
-    }
+    },
   }),
-
-  createBook("春夏秋冬代行者 春之舞 上", "曉佳奈", "春夏秋冬代行者", "season-spring-1"),
-  createBook("春夏秋冬代行者 春之舞 下", "曉佳奈", "春夏秋冬代行者", "season-spring-2"),
-  createBook("春夏秋冬代行者 曉之射手", "曉佳奈", "春夏秋冬代行者", "season-archer"),
-  createBook("春夏秋冬代行者 夏之舞 上", "曉佳奈", "春夏秋冬代行者", "season-summer-1"),
-  createBook("春夏秋冬代行者 夏之舞 下", "曉佳奈", "春夏秋冬代行者", "season-summer-2"),
 
   ...createSeries({
     title: "我是星際國家的英雄騎士！",
     author: "三嶋與夢",
     category: "我是星際國家的英雄騎士！",
     idBase: "heroic-knight",
-    volumes: [1, 2, 3, 4], // Updated to 1~4
+    volumes: [1, 2, 3, 4],
   }),
-
-  // --- 現有系列 (輕小說) ---
 
   ...createSeries({
     title: "加速世界",
@@ -503,8 +543,6 @@ export const initialBooks: Book[] = [
     },
   }),
 
-  // --- 新增系列 (漫畫) ---
-
   ...createSeries({
     title: "狂賭之淵",
     author: "河本焰/尚村透",
@@ -543,30 +581,6 @@ export const initialBooks: Book[] = [
     category: "終之退魔師",
     idBase: "ender-geister",
     volumes: [1, 2, 3],
-  }),
-
-  ...createSeries({
-    title: "非專業私刑",
-    author: "CRG/金圭森",
-    category: "非專業私刑",
-    idBase: "vigilante",
-    volumes: [1],
-  }),
-
-  ...createSeries({
-    title: "she is beautiful",
-    author: "江坂純/凸ノ高秀",
-    category: "she is beautiful",
-    idBase: "she-beautiful",
-    volumes: [1],
-  }),
-
-  ...createSeries({
-    title: "香格里拉",
-    author: "硬梨菜/不二涼介",
-    category: "香格里拉",
-    idBase: "shangrila",
-    volumes: [1],
   }),
 
   ...createSeries({
@@ -625,8 +639,6 @@ export const initialBooks: Book[] = [
     volumes: [1, 2],
   }),
 
-  // --- 更新/保留系列 (漫畫 - 保留封面 URL) ---
-
   ...createSeries({
     title: "出租女友",
     author: "宮島禮吏",
@@ -641,7 +653,14 @@ export const initialBooks: Book[] = [
       5: "https://www.tongli.com.tw/ComicImages/Images/KD1552/KD1552005/KD1552005.jpg",
       6: "https://www.tongli.com.tw/ComicImages/Images/KD1552/KD1552006/KD1552006.jpg",
       10: "https://www.tongli.com.tw/ComicImages/Images/KD1552/KD1552010/KD1552010.jpg",
-      11: "https://www.tongli.com.tw/ComicImages/Images/KD1552/KD1552011/KD1552011.jpg"
+      11: "https://www.tongli.com.tw/ComicImages/Images/KD1552/KD1552011/KD1552011.jpg",
+      22: "https://www.tongli.com.tw/ComicImages/Images/KD1552/KD1552022/KD1552022.jpg",
+      23: "https://www.tongli.com.tw/ComicImages/Images/KD1552/KD1552023/KD1552023.jpg",
+      24: "https://www.tongli.com.tw/ComicImages/Images/KD1552/KD1552024/KD1552024.jpg",
+      25: "https://www.tongli.com.tw/ComicImages/Images/KD1552/KD1552025/KD1552025.jpg",
+      26: "https://www.tongli.com.tw/ComicImages/Images/KD1552/KD1552026/KD1552026.jpg",
+      27: "https://www.tongli.com.tw/ComicImages/Images/KD1552/KD1552027/KD1552027.jpg",
+      28: "https://www.tongli.com.tw/ComicImages/Images/KD1552/KD1552028/KD1552028.jpg"
     },
   }),
 
@@ -759,6 +778,48 @@ export const initialBooks: Book[] = [
   }),
 
   ...createSeries({
+    title: "薰香花朵凛然綻放",
+    author: "三香見SAKA",
+    category: "薰香花朵凛然綻放",
+    idBase: "kaoru-hana",
+    volumes: [1, 7, 8],
+    covers: {
+      1: "https://www.tongli.com.tw/ComicImages/Images/KD1735/KD1735001/KD1735001.jpg"
+    },
+  }),
+
+  ...createSeries({
+    title: "葬送的芙莉蓮",
+    author: "山田鐘人/阿部司",
+    category: "葬送的芙莉蓮",
+    idBase: "frieren",
+    volumes: [1, 2, 3, 4, 5, 6, 12, 14],
+  }),
+
+  ...createSeries({
+    title: "伊甸星原",
+    author: "真島浩",
+    category: "伊甸星原",
+    idBase: "edens",
+    volumes: [1, 2, 3, 4, 5],
+    covers: {
+      1: "https://www.tongli.com.tw/ComicImages/Images/KD1514/KD1514001/KD1514001.jpg",
+      2: "https://www.tongli.com.tw/ComicImages/Images/KD1514/KD1514002/KD1514002.jpg",
+      3: "https://www.tongli.com.tw/ComicImages/Images/KD1514/KD1514003/KD1514003.jpg",
+      4: "https://www.tongli.com.tw/ComicImages/Images/KD1514/KD1514004/KD1514004.jpg",
+      5: "https://www.tongli.com.tw/ComicImages/Images/KD1514/KD1514005/KD1514005.jpg"
+    },
+  }),
+
+  ...createSeries({
+    title: "少年的深淵",
+    author: "峰浪律",
+    category: "少年的深淵",
+    idBase: "abyss",
+    volumes: [1, 2, 5, 6, 7, 10, 12, 14, 15],
+  }),
+
+  ...createSeries({
     title: "笑魘",
     author: "根本安巳",
     category: "笑魘",
@@ -772,6 +833,20 @@ export const initialBooks: Book[] = [
     category: "魔都精兵的奴隸",
     idBase: "matoi",
     volumes: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],
+    covers: {
+      1: "https://www.tongli.com.tw/ComicImages/Images/JC1152/JC1152001/JC1152001.jpg",
+      2: "https://www.tongli.com.tw/ComicImages/Images/JC1152/JC1152002/JC1152002.jpg",
+      3: "https://www.tongli.com.tw/ComicImages/Images/JC1152/JC1152003/JC1152003.jpg",
+      4: "https://www.tongli.com.tw/ComicImages/Images/JC1152/JC1152004/JC1152004.jpg",
+      5: "https://www.tongli.com.tw/ComicImages/Images/JC1152/JC1152005/JC1152005.jpg",
+      6: "https://www.tongli.com.tw/ComicImages/Images/JC1152/JC1152006/JC1152006.jpg",
+      7: "https://www.tongli.com.tw/ComicImages/Images/JC1152/JC1152007/JC1152007.jpg",
+      8: "https://www.tongli.com.tw/ComicImages/Images/JC1152/JC1152008/JC1152008.jpg",
+      9: "https://www.tongli.com.tw/ComicImages/Images/JC1152/JC1152009/JC1152009.jpg",
+      10: "https://www.tongli.com.tw/ComicImages/Images/JC1152/JC1152010/JC1152010.jpg",
+      11: "https://www.tongli.com.tw/ComicImages/Images/JC1152/JC1152011/JC1152011.jpg",
+      12: "https://www.tongli.com.tw/ComicImages/Images/JC1152/JC1152012/JC1152012.jpg"
+    },
   }),
 
   ...createSeries({

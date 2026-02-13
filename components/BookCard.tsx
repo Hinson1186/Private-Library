@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Book } from '../types';
 import { CheckCircle2, Circle } from 'lucide-react';
@@ -15,7 +16,8 @@ const BookCard: React.FC<BookCardProps> = ({
   isSelectable = false, 
   isSelected = false 
 }) => {
-  const displayCover = book.coverUrl && book.coverUrl.length > 0 
+  // 優先使用書本封面，若無則使用隨機佔位圖
+  const displayCover = book.coverUrl && book.coverUrl.trim().length > 0 
     ? book.coverUrl 
     : `https://picsum.photos/seed/${book.id}/300/450`;
 
@@ -42,12 +44,18 @@ const BookCard: React.FC<BookCardProps> = ({
           alt={book.title} 
           className={`w-full h-full object-cover transition-transform duration-500 ${!isSelectable && 'group-hover:scale-105'}`}
           loading="lazy"
+          // 【關鍵】no-referrer 可以解決大多數書商阻擋外部連結的問題
+          referrerPolicy="no-referrer"
           onError={(e) => {
-            (e.target as HTMLImageElement).src = `https://picsum.photos/seed/${book.id}/300/450`;
+            const target = e.target as HTMLImageElement;
+            // 如果原始連結失敗，嘗試更換為隨機佔位圖
+            if (target.src !== `https://picsum.photos/seed/${book.id}/300/450`) {
+              target.src = `https://picsum.photos/seed/${book.id}/300/450`;
+            }
           }}
         />
         
-        {/* Selection Overlay */}
+        {/* 選取遮罩 */}
         {isSelectable && (
           <div className={`absolute inset-0 transition-colors ${isSelected ? 'bg-indigo-900/40' : 'bg-black/0 group-hover:bg-black/10'}`}>
             <div className="absolute top-2 right-2">
