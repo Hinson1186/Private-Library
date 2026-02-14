@@ -1,8 +1,7 @@
-
 import React, { useState, useMemo } from 'react';
 import { Book } from './types';
 import { useLibrary } from './hooks/useLibrary';
-import { findCategoryByName, getAllDescendantNames } from './utils/categoryHelpers';
+import { findCategoryByName, getAllDescendantNames, getParentCategoryName } from './utils/categoryHelpers';
 
 import Sidebar from './components/Sidebar';
 import Header from './components/Header';
@@ -13,7 +12,7 @@ import CategoryManagerModal from './components/CategoryManagerModal';
 import BookDetailModal from './components/BookDetailModal';
 import SettingsModal from './components/SettingsModal';
 import BatchMoveModal from './components/BatchMoveModal';
-import { Dices, X, FolderOpen, BookHeart, Plus } from 'lucide-react';
+import { Dices, X, FolderOpen, BookHeart, Plus, ChevronLeft } from 'lucide-react';
 
 const App: React.FC = () => {
   const { 
@@ -73,6 +72,22 @@ const App: React.FC = () => {
     setSelectedBookIds(new Set());
     setIsBatchMode(false);
     setIsBatchMoveOpen(false);
+  };
+
+  /**
+   * 智慧回退邏輯：
+   * 1. 如果有搜尋字，先清除搜尋
+   * 2. 如果在子分類，回退到父分類
+   * 3. 如果在頂層分類，回退到「所有書籍」
+   */
+  const handleClearFilter = () => {
+    if (searchTerm) {
+      setSearchTerm('');
+      return;
+    }
+    if (!selectedCategory) return;
+    const parentName = getParentCategoryName(categories, selectedCategory);
+    setSelectedCategory(parentName); 
   };
 
   // View Data Logic (Switch between Folders and Books)
@@ -193,12 +208,18 @@ const App: React.FC = () => {
                             <Dices size={14} className="group-hover:rotate-180 transition-transform duration-500" /> 換一批
                         </button>
                     )}
-                    {selectedCategory && (
+                    {(selectedCategory || searchTerm) && (
                         <button 
-                            onClick={() => setSelectedCategory(null)}
-                            className="text-xs flex items-center gap-1 text-slate-400 hover:text-white bg-slate-800 hover:bg-slate-700 px-3 py-1.5 rounded-full transition-colors"
+                            onClick={handleClearFilter}
+                            className="text-xs flex items-center gap-1.5 text-slate-400 hover:text-white bg-slate-800 hover:bg-slate-700 px-3 py-1.5 rounded-full transition-colors font-medium border border-slate-700/50"
                         >
-                            <X size={12} /> 清除篩選
+                            {searchTerm ? (
+                                <><X size={12} /> 清除搜尋</>
+                            ) : getParentCategoryName(categories, selectedCategory!) ? (
+                                <><ChevronLeft size={14} /> 回上一層</>
+                            ) : (
+                                <><X size={12} /> 清除篩選</>
+                            )}
                         </button>
                     )}
                 </div>

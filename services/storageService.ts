@@ -20,10 +20,21 @@ export const exportData = (books: Book[], categories: CategoryDef[]) => {
     }
   });
 
-  const seriesCodeBlocks: string[] = [];
+  const allCodeBlocks: string[] = [];
+
+  // 處理單本書籍
+  singles.forEach(b => {
+      const coverArg = b.coverUrl ? `,\n    "${b.coverUrl}"` : '';
+      allCodeBlocks.push(`  createBook(\n    "${b.title}",\n    "${b.author}",\n    "${b.category}",\n    "${b.id}"${coverArg}\n  )`);
+  });
+
+  // 處理系列書籍
   groupedBooks.forEach((group, key) => {
      if (group.length < 2) {
-         group.forEach(b => singles.push(b));
+         group.forEach(b => {
+            const coverArg = b.coverUrl ? `,\n    "${b.coverUrl}"` : '';
+            allCodeBlocks.push(`  createBook(\n    "${b.title}",\n    "${b.author}",\n    "${b.category}",\n    "${b.id}"${coverArg}\n  )`);
+         });
          return;
      }
      const [category, author, titleBase] = key.split('|');
@@ -61,19 +72,7 @@ export const exportData = (books: Book[], categories: CategoryDef[]) => {
          coversStr = `\n    covers: {\n${Object.entries(covers).map(([vol, url]) => `      ${vol}: "${url}"`).join(',\n')}\n    },`;
      }
 
-     seriesCodeBlocks.push(`
-  ...createSeries({
-    title: "${titleBase}",
-    author: "${author}",
-    category: "${category}",
-${idBaseStr}
-    volumes: [${volumes.join(', ')}],${coversStr}
-  })`);
-  });
-
-  const singleCodeBlocks = singles.map(b => {
-      const coverArg = b.coverUrl ? `,\n    "${b.coverUrl}"` : '';
-      return `  createBook(\n    "${b.title}",\n    "${b.author}",\n    "${b.category}",\n    "${b.id}"${coverArg}\n  )`;
+     allCodeBlocks.push(`  ...createSeries({\n    title: "${titleBase}",\n    author: "${author}",\n    category: "${category}",\n${idBaseStr}\n    volumes: [${volumes.join(', ')}],${coversStr}\n  })`);
   });
 
   const content = `import { Book, CategoryDef } from '../types';
@@ -87,11 +86,7 @@ import { createBook, createSeries } from '../utils/bookFactory';
 export const initialCategories: CategoryDef[] = ${JSON.stringify(categories, null, 2)};
 
 export const initialBooks: Book[] = [
-  // --- 單本或未整理書籍 ---
-${singleCodeBlocks.join(',\n')}
-
-  // --- 系列書籍 ---
-${seriesCodeBlocks.join(',\n')}
+${allCodeBlocks.join(',\n\n')}
 ];`;
 
   const blob = new Blob([content.trim()], { type: "text/plain;charset=utf-8" });

@@ -33,3 +33,17 @@ export const getAllDescendantNames = (node: CategoryDef): string[] => {
     }
     return names;
 };
+
+/**
+ * 尋找指定分類名稱的父層分類名稱。
+ */
+export const getParentCategoryName = (nodes: CategoryDef[], childName: string, parentName: string | null = null): string | null => {
+    for (const node of nodes) {
+        if (node.name === childName) return parentName;
+        if (node.children) {
+            const result = getParentCategoryName(node.children, childName, node.name);
+            if (result) return result;
+        }
+    }
+    return null;
+};

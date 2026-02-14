@@ -1,4 +1,3 @@
-
 import { Book, CategoryDef } from '../types';
 import { createBook, createSeries } from '../utils/bookFactory';
 
@@ -128,7 +127,7 @@ export const initialBooks: Book[] = [
   createBook(
     "おとなしそうな男子のとんでもない秘密を知ってしまった 2",
     "カシバ",
-    "おとなしそうな男子のとんでもない秘密を知ってしまった",
+    "おとなしそうな男子のとんでもない秘密を知體しまった",
     "d1fea1dc-7805-4920-ac47-5a2a33f7b410",
     "https://m.media-amazon.com/images/I/81U5rVy1bxL._SY425_.jpg"
   ),
@@ -161,7 +160,7 @@ export const initialBooks: Book[] = [
     "硬梨菜/不二涼介",
     "香格里拉",
     "shangrila-1"
-  ), // <--- 修正：原本這裡少了逗號，導致整個 JS 崩潰
+  ),
 
   // --- 系列書籍 (使用 createSeries 壓縮) ---
 
