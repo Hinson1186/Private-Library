@@ -3,10 +3,7 @@ import { createBook, createSeries } from '../utils/bookFactory';
 
 /**
  * 這裡是您的「永久資料庫」。
- * 如果您希望某些書籍或分類在清除瀏覽器快取後仍然存在，
- * 請將您備份的 JSON 資料內容填入這裡。
- * 
- * 此檔案由「設定 > 匯出資料」自動生成。
+ * 此檔案由網頁自動生成，請將內容貼上至 data/initialData.ts
  */
 
 export const initialCategories: CategoryDef[] = [
@@ -14,73 +11,317 @@ export const initialCategories: CategoryDef[] = [
     "id": "24aad161-b7cd-4f9f-9dff-cad573159424",
     "name": "輕小說",
     "children": [
-      { "id": "novel-cat-sao", "name": "刀劍神域", "children": [] },
-      { "id": "novel-cat-sao-p", "name": "刀劍神域 Progressive", "children": [] },
-      { "id": "bf9a5344-49ec-485c-9e1d-03c3f88dbe62", "name": "關於我在無意間被隔壁的天使變成廢柴這件事", "children": [] },
-      { "id": "novel-cat-season", "name": "春夏秋冬代行者", "children": [] },
-      { "id": "novel-cat-shadow", "name": "我想成為影之強者！", "children": [] },
-      { "id": "novel-cat-fiancee", "name": "我的不起眼未婚妻在家有夠可愛", "children": [] },
-      { "id": "novel-cat-accel", "name": "加速世界", "children": [] },
-      { "id": "novel-cat-haibara", "name": "灰原同學重返過去，開啟所向無敵的第二輪青春遊戲", "children": [] },
-      { "id": "novel-cat-youzitsu", "name": "歡迎來到實力至上主義的教室", "children": [] },
-      { "id": "novel-cat-lord", "name": "我是星際國家的惡德領主！", "children": [] },
-      { "id": "novel-cat-knight", "name": "我是星際國家的英雄騎士！", "children": [] },
-      { "id": "novel-cat-brave", "name": "勇者症候群", "children": [] },
-      { "id": "novel-cat-sister", "name": "其實是繼妹。", "children": [] },
-      { "id": "novel-cat-backup", "name": "我當備胎女友也沒關係。", "children": [] },
-      { "id": "novel-cat-nosister", "name": "妹妹是不能當女友的，可是……", "children": [] },
-      { "id": "novel-cat-reincarnation", "name": "你以為區區轉生就逃得了嗎，哥哥？", "children": [] },
-      { "id": "silent-witch-cat-001", "name": "沉默魔女的秘密", "children": [] },
-      { "id": "kings-proposal-cat-001", "name": "王者的求婚", "children": [] },
-      { "id": "saijo-shitsuji-cat-001", "name": "才女的侍從", "children": [] },
-      { "id": "imo-uza-cat-001", "name": "朋友的妹妹只纏著我", "children": [] },
-      { "id": "ngnl-cat-001", "name": "遊戲人生", "children": [] },
-      { "id": "elaina-cat-001", "name": "魔女之旅", "children": [] },
-      { "id": "date-a-live-cat-001", "name": "約會大作戰", "children": [] },
-      { "id": "mushoku-cat-001", "name": "無職轉生", "children": [] },
-      { "id": "86-cat-001", "name": "86不存在的戰區", "children": [] },
-      { "id": "13e1e44e-d222-4cd9-bf6b-f7f91835dc54", "name": "散本", "children": [] }
+      {
+        "id": "novel-cat-sao",
+        "name": "刀劍神域",
+        "children": []
+      },
+      {
+        "id": "novel-cat-sao-p",
+        "name": "刀劍神域 Progressive",
+        "children": []
+      },
+      {
+        "id": "bf9a5344-49ec-485c-9e1d-03c3f88dbe62",
+        "name": "關於我在無意間被隔壁的天使變成廢柴這件事",
+        "children": []
+      },
+      {
+        "id": "novel-cat-season",
+        "name": "春夏秋冬代行者",
+        "children": []
+      },
+      {
+        "id": "novel-cat-shadow",
+        "name": "我想成為影之強者！",
+        "children": []
+      },
+      {
+        "id": "novel-cat-fiancee",
+        "name": "我的不起眼未婚妻在家有夠可愛",
+        "children": []
+      },
+      {
+        "id": "novel-cat-accel",
+        "name": "加速世界",
+        "children": []
+      },
+      {
+        "id": "novel-cat-haibara",
+        "name": "灰原同學重返過去，開啟所向無敵的第二輪青春遊戲",
+        "children": []
+      },
+      {
+        "id": "novel-cat-youzitsu",
+        "name": "歡迎來到實力至上主義的教室",
+        "children": []
+      },
+      {
+        "id": "novel-cat-lord",
+        "name": "我是星際國家的惡德領主！",
+        "children": []
+      },
+      {
+        "id": "novel-cat-knight",
+        "name": "我是星際國家的英雄騎士！",
+        "children": []
+      },
+      {
+        "id": "novel-cat-brave",
+        "name": "勇者症候群",
+        "children": []
+      },
+      {
+        "id": "novel-cat-sister",
+        "name": "其實是繼妹。",
+        "children": []
+      },
+      {
+        "id": "novel-cat-backup",
+        "name": "我當備胎女友也沒關係。",
+        "children": []
+      },
+      {
+        "id": "novel-cat-nosister",
+        "name": "妹妹是不能當女友的，可是……",
+        "children": []
+      },
+      {
+        "id": "novel-cat-reincarnation",
+        "name": "你以為區區轉生就逃得了嗎，哥哥？",
+        "children": []
+      },
+      {
+        "id": "silent-witch-cat-001",
+        "name": "沉默魔女的秘密",
+        "children": []
+      },
+      {
+        "id": "kings-proposal-cat-001",
+        "name": "王者的求婚",
+        "children": []
+      },
+      {
+        "id": "saijo-shitsuji-cat-001",
+        "name": "才女的侍從",
+        "children": []
+      },
+      {
+        "id": "imo-uza-cat-001",
+        "name": "朋友的妹妹只纏著我",
+        "children": []
+      },
+      {
+        "id": "ngnl-cat-001",
+        "name": "遊戲人生",
+        "children": []
+      },
+      {
+        "id": "elaina-cat-001",
+        "name": "魔女之旅",
+        "children": []
+      },
+      {
+        "id": "date-a-live-cat-001",
+        "name": "約會大作戰",
+        "children": []
+      },
+      {
+        "id": "mushoku-cat-001",
+        "name": "無職轉生",
+        "children": []
+      },
+      {
+        "id": "86-cat-001",
+        "name": "86不存在的戰區",
+        "children": []
+      },
+      {
+        "id": "13e1e44e-d222-4cd9-bf6b-f7f91835dc54",
+        "name": "散本",
+        "children": []
+      }
     ]
   },
   {
     "id": "84ca7f1e-fa93-4f2d-a670-68dbfca56564",
     "name": "漫畫",
     "children": [
-      { "id": "manga-cat-opium", "name": "滿州鴉片小隊", "children": [] },
-      { "id": "manga-cat-smile", "name": "笑魘", "children": [] },
-      { "id": "manga-cat-slave", "name": "魔都精兵的奴隸", "children": [] },
-      { "id": "manga-cat-summer", "name": "光逝去的夏天", "children": [] },
-      { "id": "manga-cat-25d", "name": "2.5次元的誘惑", "children": [] },
-      { "id": "manga-cat-abyss-m", "name": "來自深淵", "children": [] },
-      { "id": "0d2176ec-22e2-4c1f-bdc7-8b0520f116a0", "name": "薰香花朵凛然綻放", "children": [] },
-      { "id": "9a3b2c1d-4e5f-6a7b-8c9d-0e1f2a3b4c5d", "name": "咒術迴戰", "children": [] },
-      { "id": "rent-a-girlfriend-id-001", "name": "出租女友", "children": [] },
-      { "id": "kick-love-cat-001", "name": "不踹不踩不成愛", "children": [] },
-      { "id": "fuufu-cat-001", "name": "夫婦以上，戀人未滿", "children": [] },
-      { "id": "black-cat-witch-cat-001", "name": "黑貓與魔女的教室", "children": [] },
-      { "id": "boys-abyss-cat-001", "name": "少年的深淵", "children": [] },
-      { "id": "edens-zero-cat-001", "name": "伊甸星原", "children": [] },
-      { "id": "amagami-cat-001", "name": "結緣甘神神社", "children": [] },
-      { "id": "kagura-cat-001", "name": "神樂鉢", "children": [] },
-      { "id": "midnight-heart-cat-001", "name": "午夜的傾心旋律", "children": [] },
-      { "id": "frieren-cat-001", "name": "葬送的芙莉蓮", "children": [] },
-      { "id": "c001d13c-c3e3-494a-9027-28f69922bda1", "name": "おとなしそうな男子のとんでもない秘密を知ってしまった", "children": [] },
-      { "id": "1853d3d1-0f08-4a52-95c1-d07cb53644e0", "name": "気になってる人が男じゃなかった", "children": [] },
-      { "id": "manga-cat-kindaichi", "name": "金田一少年事件簿R", "children": [] },
-      { "id": "manga-cat-cuckoo", "name": "杜鵑婚約", "children": [] },
-      { "id": "manga-cat-akebi", "name": "明日同學的水手服", "children": [] },
-      { "id": "manga-cat-goddess", "name": "女神咖啡廳", "children": [] },
-      { "id": "manga-cat-nagatoro", "name": "不要欺負我，長瀞同學", "children": [] },
-      { "id": "manga-cat-kubo", "name": "久保同學不放過我", "children": [] },
-      { "id": "manga-cat-senpai-boy", "name": "學姐是男孩", "children": [] },
-      { "id": "manga-cat-kakegurui", "name": "狂賭之淵", "children": [] },
-      { "id": "manga-cat-fairy-100", "name": "妖精的尾巴 百年任務", "children": [] },
-      { "id": "manga-cat-eternity", "name": "致不滅的你", "children": [] },
-      { "id": "manga-cat-chainsaw", "name": "鏈鋸人", "children": [] },
-      { "id": "manga-cat-ender", "name": "終之退魔師", "children": [] },
-      { "id": "manga-cat-vigilante", "name": "非專業私刑", "children": [] },
-      { "id": "manga-cat-she-beautiful", "name": "she is beautiful", "children": [] },
-      { "id": "manga-cat-shangrila", "name": "香格里拉", "children": [] }
+      {
+        "id": "manga-cat-opium",
+        "name": "滿州鴉片小隊",
+        "children": []
+      },
+      {
+        "id": "manga-cat-smile",
+        "name": "笑魘",
+        "children": []
+      },
+      {
+        "id": "manga-cat-slave",
+        "name": "魔都精兵的奴隸",
+        "children": []
+      },
+      {
+        "id": "manga-cat-summer",
+        "name": "光逝去的夏天",
+        "children": []
+      },
+      {
+        "id": "manga-cat-25d",
+        "name": "2.5次元的誘惑",
+        "children": []
+      },
+      {
+        "id": "manga-cat-abyss-m",
+        "name": "來自深淵",
+        "children": []
+      },
+      {
+        "id": "0d2176ec-22e2-4c1f-bdc7-8b0520f116a0",
+        "name": "薰香花朵凛然綻放",
+        "children": []
+      },
+      {
+        "id": "9a3b2c1d-4e5f-6a7b-8c9d-0e1f2a3b4c5d",
+        "name": "咒術迴戰",
+        "children": []
+      },
+      {
+        "id": "rent-a-girlfriend-id-001",
+        "name": "出租女友",
+        "children": []
+      },
+      {
+        "id": "kick-love-cat-001",
+        "name": "不踹不踩不成愛",
+        "children": []
+      },
+      {
+        "id": "fuufu-cat-001",
+        "name": "夫婦以上，戀人未滿",
+        "children": []
+      },
+      {
+        "id": "black-cat-witch-cat-001",
+        "name": "黑貓與魔女的教室",
+        "children": []
+      },
+      {
+        "id": "boys-abyss-cat-001",
+        "name": "少年的深淵",
+        "children": []
+      },
+      {
+        "id": "edens-zero-cat-001",
+        "name": "伊甸星原",
+        "children": []
+      },
+      {
+        "id": "amagami-cat-001",
+        "name": "結緣甘神神社",
+        "children": []
+      },
+      {
+        "id": "kagura-cat-001",
+        "name": "神樂鉢",
+        "children": []
+      },
+      {
+        "id": "midnight-heart-cat-001",
+        "name": "午夜的傾心旋律",
+        "children": []
+      },
+      {
+        "id": "frieren-cat-001",
+        "name": "葬送的芙莉蓮",
+        "children": []
+      },
+      {
+        "id": "c001d13c-c3e3-494a-9027-28f69922bda1",
+        "name": "おとなしそうな男子のとんでもない秘密を知ってしまった",
+        "children": []
+      },
+      {
+        "id": "1853d3d1-0f08-4a52-95c1-d07cb53644e0",
+        "name": "気になってる人が男じゃなかった",
+        "children": []
+      },
+      {
+        "id": "manga-cat-kindaichi",
+        "name": "金田一少年事件簿R",
+        "children": []
+      },
+      {
+        "id": "manga-cat-cuckoo",
+        "name": "杜鵑婚約",
+        "children": []
+      },
+      {
+        "id": "manga-cat-akebi",
+        "name": "明日同學的水手服",
+        "children": []
+      },
+      {
+        "id": "manga-cat-goddess",
+        "name": "女神咖啡廳",
+        "children": []
+      },
+      {
+        "id": "manga-cat-nagatoro",
+        "name": "不要欺負我，長瀞同學",
+        "children": []
+      },
+      {
+        "id": "manga-cat-kubo",
+        "name": "久保同學不放過我",
+        "children": []
+      },
+      {
+        "id": "manga-cat-senpai-boy",
+        "name": "學姐是男孩",
+        "children": []
+      },
+      {
+        "id": "manga-cat-kakegurui",
+        "name": "狂賭之淵",
+        "children": []
+      },
+      {
+        "id": "manga-cat-fairy-100",
+        "name": "妖精的尾巴 百年任務",
+        "children": []
+      },
+      {
+        "id": "manga-cat-eternity",
+        "name": "致不滅的你",
+        "children": []
+      },
+      {
+        "id": "manga-cat-chainsaw",
+        "name": "鏈鋸人",
+        "children": []
+      },
+      {
+        "id": "manga-cat-ender",
+        "name": "終之退魔師",
+        "children": []
+      },
+      {
+        "id": "manga-cat-vigilante",
+        "name": "非專業私刑",
+        "children": []
+      },
+      {
+        "id": "manga-cat-she-beautiful",
+        "name": "she is beautiful",
+        "children": []
+      },
+      {
+        "id": "manga-cat-shangrila",
+        "name": "香格里拉",
+        "children": []
+      }
     ]
   }
 ];
@@ -98,36 +339,41 @@ export const initialBooks: Book[] = [
     "春夏秋冬代行者 春之舞 上",
     "曉佳奈",
     "春夏秋冬代行者",
-    "season-spring-1"
+    "season-spring-1",
+    "https://www.tongli.com.tw/ComicImages/Images/NB0028/NB0028001A/NB0028001A.jpg"
   ),
   createBook(
     "春夏秋冬代行者 春之舞 下",
     "曉佳奈",
     "春夏秋冬代行者",
-    "season-spring-2"
+    "season-spring-2",
+    "https://www.tongli.com.tw/ComicImages/Images/NB0028/NB0028002A/NB0028002A.jpg"
   ),
   createBook(
     "春夏秋冬代行者 曉之射手",
     "曉佳奈",
     "春夏秋冬代行者",
-    "season-archer"
+    "season-archer",
+    "https://www.tongli.com.tw/ComicImages/Images/NB0033/NB0033001A/NB0033001A.jpg"
   ),
   createBook(
     "春夏秋冬代行者 夏之舞 上",
     "曉佳奈",
     "春夏秋冬代行者",
-    "season-summer-1"
+    "season-summer-1",
+    "https://www.tongli.com.tw/ComicImages/Images/NB0030/NB0030001A/NB0030001A.jpg"
   ),
   createBook(
     "春夏秋冬代行者 夏之舞 下",
     "曉佳奈",
     "春夏秋冬代行者",
-    "season-summer-2"
+    "season-summer-2",
+    "https://www.tongli.com.tw/ComicImages/Images/NB0030/NB0030002A/NB0030002A.jpg"
   ),
   createBook(
     "おとなしそうな男子のとんでもない秘密を知ってしまった 2",
     "カシバ",
-    "おとなしそうな男子のとんでもない秘密を知體しまった",
+    "おとなしそうな男子のとんでもない秘密を知ってしまった",
     "d1fea1dc-7805-4920-ac47-5a2a33f7b410",
     "https://m.media-amazon.com/images/I/81U5rVy1bxL._SY425_.jpg"
   ),
@@ -162,7 +408,7 @@ export const initialBooks: Book[] = [
     "shangrila-1"
   ),
 
-  // --- 系列書籍 (使用 createSeries 壓縮) ---
+  // --- 系列書籍 ---
 
   ...createSeries({
     title: "刀劍神域",
@@ -588,6 +834,15 @@ export const initialBooks: Book[] = [
     category: "金田一少年事件簿R",
     idBase: "kindaichi-r",
     volumes: [1, 2, 3, 4, 5, 6, 7],
+    covers: {
+      1: "https://www.tongli.com.tw/ComicImages/Images/KD0494/KD0494001/KD0494001.jpg",
+      2: "https://www.tongli.com.tw/ComicImages/Images/KD0494/KD0494002/KD0494002.jpg",
+      3: "https://www.tongli.com.tw/ComicImages/Images/KD0494/KD0494003/KD0494003.jpg",
+      4: "https://www.tongli.com.tw/ComicImages/Images/KD0494/KD0494004/KD0494004.jpg",
+      5: "https://www.tongli.com.tw/ComicImages/Images/KD0494/KD0494005/KD0494005.jpg",
+      6: "https://www.tongli.com.tw/ComicImages/Images/KD0494/KD0494006/KD0494006.jpg",
+      7: "https://www.tongli.com.tw/ComicImages/Images/KD0494/KD0494007/KD0494007.jpg"
+    },
   }),
 
   ...createSeries({
@@ -816,6 +1071,17 @@ export const initialBooks: Book[] = [
     category: "少年的深淵",
     idBase: "abyss",
     volumes: [1, 2, 5, 6, 7, 10, 12, 14, 15],
+    covers: {
+      1: "https://s2.eslite.com/unsafe/fit-in/x900/s.eslite.com/upload/product/o/2682167885003/20220503034152155143.jpg",
+      2: "https://s2.eslite.com/unsafe/fit-in/x900/s.eslite.com/upload/product/o/2682184595008/20220609030837646522.jpg",
+      5: "https://s2.eslite.com/unsafe/fit-in/x900/s.eslite.com/upload/product/o/2682358981002/20230325033658421785.jpg",
+      6: "https://s2.eslite.com/unsafe/fit-in/x900/s.eslite.com/b2b/vendor/eslite_2023062720230627101407/10520906.jpg",
+      7: "https://s2.eslite.com/unsafe/fit-in/x900/s.eslite.com/b2b/vendor/eslite_2023080820230808104215/10520907.jpg",
+      10: "https://s2.eslite.com/unsafe/fit-in/x900/s.eslite.com/b2b/vendor/vendor171263335669720240409112918/mainCoverImage1_1241500.jpg",
+      12: "https://s2.eslite.com/unsafe/fit-in/x900/s.eslite.com/b2b/vendor/vendor173700138829720250116122310/mainCoverImage1_1382785.jpg",
+      14: "https://s2.eslite.com/unsafe/fit-in/x900/s.eslite.com/b2b/vendor/vendor175153491546220250703172840/mainCoverImage1_1470325.jpg",
+      15: "https://s2.eslite.com/unsafe/fit-in/x900/s.eslite.com/b2b/vendor/vendor175759217760320250911200300/mainCoverImage1_1519185.jpg"
+    },
   }),
 
   ...createSeries({
