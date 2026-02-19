@@ -327,7 +327,6 @@ export const initialCategories: CategoryDef[] = [
 ];
 
 export const initialBooks: Book[] = [
-  // --- 單本或未整理書籍 ---
   createBook(
     "通往夏天的隧道，再見的出口",
     "八目迷",
@@ -335,6 +334,7 @@ export const initialBooks: Book[] = [
     "9ae9b3ba-2f5b-4ca3-9b0c-d2671040ab05",
     "https://www.tongli.com.tw/ComicImages/Images/NJ0039/NJ0039001/NJ0039001.jpg"
   ),
+
   createBook(
     "春夏秋冬代行者 春之舞 上",
     "曉佳奈",
@@ -342,6 +342,7 @@ export const initialBooks: Book[] = [
     "season-spring-1",
     "https://www.tongli.com.tw/ComicImages/Images/NB0028/NB0028001A/NB0028001A.jpg"
   ),
+
   createBook(
     "春夏秋冬代行者 春之舞 下",
     "曉佳奈",
@@ -349,6 +350,7 @@ export const initialBooks: Book[] = [
     "season-spring-2",
     "https://www.tongli.com.tw/ComicImages/Images/NB0028/NB0028002A/NB0028002A.jpg"
   ),
+
   createBook(
     "春夏秋冬代行者 曉之射手",
     "曉佳奈",
@@ -356,6 +358,7 @@ export const initialBooks: Book[] = [
     "season-archer",
     "https://www.tongli.com.tw/ComicImages/Images/NB0033/NB0033001A/NB0033001A.jpg"
   ),
+
   createBook(
     "春夏秋冬代行者 夏之舞 上",
     "曉佳奈",
@@ -363,6 +366,7 @@ export const initialBooks: Book[] = [
     "season-summer-1",
     "https://www.tongli.com.tw/ComicImages/Images/NB0030/NB0030001A/NB0030001A.jpg"
   ),
+
   createBook(
     "春夏秋冬代行者 夏之舞 下",
     "曉佳奈",
@@ -370,6 +374,7 @@ export const initialBooks: Book[] = [
     "season-summer-2",
     "https://www.tongli.com.tw/ComicImages/Images/NB0030/NB0030002A/NB0030002A.jpg"
   ),
+
   createBook(
     "おとなしそうな男子のとんでもない秘密を知ってしまった 2",
     "カシバ",
@@ -377,38 +382,42 @@ export const initialBooks: Book[] = [
     "d1fea1dc-7805-4920-ac47-5a2a33f7b410",
     "https://m.media-amazon.com/images/I/81U5rVy1bxL._SY425_.jpg"
   ),
+
   createBook(
     "我想成為影之強者！ 2",
     "逢澤大介",
     "我想成為影之強者！",
     "eminence-shadow-2"
   ),
+
   createBook(
     "我的不起眼未婚妻在家有夠可愛 4",
     "三河ごーすと",
     "我的不起眼未婚妻在家有夠可愛",
     "jimokawa-4"
   ),
+
   createBook(
     "非專業私刑 1",
-    "CRG/金圭森",
+    "内藤光太郎/浅村壮平",
     "非專業私刑",
-    "vigilante-1"
+    "vigilante-1",
+    "https://shoplineimg.com/655b0f3c9b81d900188b35f1/68fb4a68d0d50e0010860ab1/800x.webp?source_format=jpg"
   ),
+
   createBook(
     "she is beautiful 1",
     "江坂純/凸ノ高秀",
     "she is beautiful",
     "she-beautiful-1"
   ),
+
   createBook(
     "香格里拉 1",
     "硬梨菜/不二涼介",
     "香格里拉",
     "shangrila-1"
   ),
-
-  // --- 系列書籍 ---
 
   ...createSeries({
     title: "刀劍神域",
@@ -443,6 +452,12 @@ export const initialBooks: Book[] = [
     category: "我是星際國家的英雄騎士！",
     idBase: "heroic-knight",
     volumes: [1, 2, 3, 4],
+    covers: {
+      1: "https://www.tongli.com.tw/ComicImages/Images/NW0038/NW0038001A/NW0038001A.jpg",
+      2: "https://www.tongli.com.tw/ComicImages/Images/NW0038/NW0038002A/NW0038002A.jpg",
+      3: "https://www.tongli.com.tw/ComicImages/Images/NW0038/NW0038003/NW0038003.jpg",
+      4: "https://www.tongli.com.tw/ComicImages/Images/NW0038/NW0038004/NW0038004.jpg"
+    },
   }),
 
   ...createSeries({
@@ -493,14 +508,24 @@ export const initialBooks: Book[] = [
     category: "我是星際國家的惡德領主！",
     idBase: "evil-lord",
     volumes: [2, 3, 4, 5],
+    covers: {
+      2: "https://www.tongli.com.tw/ComicImages/Images/NW0031/NW0031002A/NW0031002A.jpg",
+      3: "https://www.tongli.com.tw/ComicImages/Images/NW0031/NW0031003A/NW0031003A.jpg",
+      4: "https://www.tongli.com.tw/ComicImages/Images/NW0031/NW0031004A/NW0031004A.jpg",
+      5: "https://www.tongli.com.tw/ComicImages/Images/NW0031/NW0031005A/NW0031005A.jpg"
+    },
   }),
 
   ...createSeries({
     title: "勇者症候群",
-    author: "彩峰舞人",
+    author: "彩月レイ",
     category: "勇者症候群",
     idBase: "brave-syndrome",
     volumes: [1, 2],
+    covers: {
+      1: "https://www.tongli.com.tw/ComicImages/Images/NB0034/NB0034001A/NB0034001A.jpg",
+      2: "https://www.tongli.com.tw/ComicImages/Images/NB0034/NB0034002/NB0034002.jpg"
+    },
   }),
 
   ...createSeries({
@@ -533,6 +558,11 @@ export const initialBooks: Book[] = [
     category: "你以為區區轉生就逃得了嗎，哥哥？",
     idBase: "reincarnation-escape",
     volumes: [1, 2, 3],
+    covers: {
+      1: "https://www.tongli.com.tw/ComicImages/Images/NA0133/NA0133001A/NA0133001A.jpg",
+      2: "https://www.tongli.com.tw/ComicImages/Images/NA0133/NA0133002A/NA0133002A.jpg",
+      3: "https://www.tongli.com.tw/ComicImages/Images/NA0133/NA0133003A/NA0133003A.jpg"
+    },
   }),
 
   ...createSeries({
@@ -559,21 +589,23 @@ export const initialBooks: Book[] = [
     idBase: "elaina",
     volumes: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17],
     covers: {
-      1: "https://www.ching-win.com.tw//upload_files/fonlego-rwd/prodpic/D_40115701.jpg",
-      2: "https://www.ching-win.com.tw//upload_files/fonlego-rwd/prodpic/D_40115702.jpg",
-      3: "https://www.ching-win.com.tw//upload_files/fonlego-rwd/prodpic/D_40115703.jpg",
-      4: "https://www.ching-win.com.tw//upload_files/fonlego-rwd/prodpic/D_40115704.jpg",
-      5: "https://www.ching-win.com.tw//upload_files/fonlego-rwd/prodpic/D_40115705.jpg",
-      6: "https://www.ching-win.com.tw//upload_files/fonlego-rwd/prodpic/D_40115706.jpg",
-      7: "https://www.ching-win.com.tw//upload_files/fonlego-rwd/prodpic/D_40115707.jpg",
-      8: "https://www.ching-win.com.tw//upload_files/fonlego-rwd/prodpic/D_40115708.jpg",
-      9: "https://www.ching-win.com.tw//upload_files/fonlego-rwd/prodpic/D_40115709.jpg",
-      10: "https://www.ching-win.com.tw//upload_files/fonlego-rwd/prodpic/D_40115710.jpg",
-      11: "https://www.ching-win.com.tw//upload_files/fonlego-rwd/prodpic/D_40115711.jpg",
-      12: "https://www.ching-win.com.tw//upload_files/fonlego-rwd/prodpic/D_40115712.jpg",
-      13: "https://www.ching-win.com.tw//upload_files/fonlego-rwd/prodpic/D_40115713.jpg",
-      14: "https://www.ching-win.com.tw//upload_files/fonlego-rwd/prodpic/D_40115714.jpg",
-      15: "https://www.ching-win.com.tw//upload_files/fonlego-rwd/prodpic/D_40115715.jpg"
+      1: "https://s2.eslite.com/unsafe/fit-in/x900/s.eslite.com/upload/product/o/2681450442008/ec1284803.jpg",
+      2: "https://s2.eslite.com/unsafe/fit-in/x900/s.eslite.com/upload/product/o/2681541283008/750115.jpg",
+      3: "https://s2.eslite.com/unsafe/fit-in/x900/s.eslite.com/upload/product/o/2681582032009/783864.jpg",
+      4: "https://s2.eslite.com/unsafe/fit-in/x900/s.eslite.com/upload/product/o/2681682058008/20190422115255586276.jpg",
+      5: "https://s2.eslite.com/unsafe/fit-in/x900/s.eslite.com/upload/product/o/2681758300000/ec1759843.jpg",
+      6: "https://s2.eslite.com/unsafe/fit-in/x900/s.eslite.com/upload/product/o/2681783217007/20190709041132190216.jpg",
+      7: "https://s2.eslite.com/unsafe/fit-in/x900/s.eslite.com/upload/product/o/2681860927003/20200307041627865600.jpg",
+      8: "https://s2.eslite.com/unsafe/fit-in/x900/s.eslite.com/Upload/Product/202008/o/637320404263072500.jpg",
+      9: "https://s2.eslite.com/unsafe/fit-in/x900/s.eslite.com/upload/product/o/2681929392001/20201014034301726030.jpg",
+      10: "https://s2.eslite.com/unsafe/fit-in/x900/s.eslite.com/upload/product/o/2681956403008/20201215041632641832.jpg",
+      11: "https://s2.eslite.com/unsafe/fit-in/x900/s.eslite.com/upload/product/o/2681975616007/20210126033715568863.jpg",
+      12: "https://s2.eslite.com/unsafe/fit-in/x900/s.eslite.com/upload/product/o/2682049095001/20210723093353866706.jpg",
+      13: "https://s2.eslite.com/unsafe/fit-in/x900/s.eslite.com/upload/product/o/2682054464007/20210804035407381516.jpg",
+      14: "https://s2.eslite.com/unsafe/fit-in/x900/s.eslite.com/upload/product/o/2682120579000/20220111032125520436.jpg",
+      15: "https://s2.eslite.com/unsafe/fit-in/x900/s.eslite.com/upload/product/o/2682147219002/20220317033732170071.jpg",
+      16: "https://s2.eslite.com/unsafe/fit-in/x900/s.eslite.com/upload/product/o/2682193190003/20220624035349823377.jpg",
+      17: "https://s2.eslite.com/unsafe/fit-in/x900/s.eslite.com/upload/product/o/2682214948002/20220727033420425643.jpg"
     },
   }),
 
@@ -818,14 +850,32 @@ export const initialBooks: Book[] = [
     category: "鏈鋸人",
     idBase: "chainsaw",
     volumes: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
+    covers: {
+      1: "https://www.tongli.com.tw/ComicImages/Images/JC1146/JC1146001/JC1146001.jpg",
+      2: "https://www.tongli.com.tw/ComicImages/Images/JC1146/JC1146002/JC1146002.jpg",
+      3: "https://www.tongli.com.tw/ComicImages/Images/JC1146/JC1146003/JC1146003.jpg",
+      4: "https://www.tongli.com.tw/ComicImages/Images/JC1146/JC1146004/JC1146004.jpg",
+      5: "https://www.tongli.com.tw/ComicImages/Images/JC1146/JC1146005/JC1146005.jpg",
+      6: "https://www.tongli.com.tw/ComicImages/Images/JC1146/JC1146006/JC1146006.jpg",
+      7: "https://www.tongli.com.tw/ComicImages/Images/JC1146/JC1146007/JC1146007.jpg",
+      8: "https://www.tongli.com.tw/ComicImages/Images/JC1146/JC1146008/JC1146008.jpg",
+      9: "https://www.tongli.com.tw/ComicImages/Images/JC1146/JC1146009/JC1146009.jpg",
+      10: "https://www.tongli.com.tw/ComicImages/Images/JC1146/JC1146010/JC1146010.jpg",
+      11: "https://www.tongli.com.tw/ComicImages/Images/JC1146/JC1146011/JC1146011.jpg"
+    },
   }),
 
   ...createSeries({
     title: "終之退魔師",
-    author: "四谷啓太郎",
+    author: "四方山 貴史",
     category: "終之退魔師",
     idBase: "ender-geister",
     volumes: [1, 2, 3],
+    covers: {
+      1: "https://img.91app.com/webapi/imagesV3/Original/SalePage/10366981/0/638892407642800000?v=1",
+      2: "https://img.91app.com/webapi/imagesV3/Original/SalePage/10488971/0/638814367380630000?v=1",
+      3: "https://img.91app.com/webapi/imagesV3/Original/SalePage/10567362/0/638892407635470000?v=1"
+    },
   }),
 
   ...createSeries({
@@ -859,6 +909,16 @@ export const initialBooks: Book[] = [
     category: "明日同學的水手服",
     idBase: "akebi",
     volumes: [1, 2, 3, 4, 5, 6, 7, 8],
+    covers: {
+      1: "https://s2.eslite.com/unsafe/fit-in/x900/s.eslite.com/upload/product/o/2681682046005/20190422115211730233.jpg",
+      2: "https://s2.eslite.com/unsafe/fit-in/x900/s.eslite.com/upload/product/o/2681770740006/20190628164517864277.jpg",
+      3: "https://s2.eslite.com/unsafe/fit-in/x900/s.eslite.com/upload/product/o/2681798679005/20190821044938477502.jpg",
+      4: "https://s2.eslite.com/unsafe/fit-in/x900/s.eslite.com/upload/product/o/2681825025003/20191102052832689736.jpg",
+      5: "https://s2.eslite.com/unsafe/fit-in/x900/s.eslite.com/upload/product/o/2681848986008/20200109033552962374.jpg",
+      6: "https://s2.eslite.com/unsafe/fit-in/x900/s.eslite.com/upload/product/o/2681894010009/20200701053108668003.jpg",
+      7: "https://s2.eslite.com/unsafe/fit-in/x900/s.eslite.com/upload/product/o/2681991549006/20210316054822146774.jpg",
+      8: "https://s2.eslite.com/unsafe/fit-in/x900/s.eslite.com/upload/product/o/2682159959002/20220414060610889737.jpg"
+    },
   }),
 
   ...createSeries({
@@ -954,18 +1014,19 @@ export const initialBooks: Book[] = [
     idBase: "abyss-manga",
     volumes: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13],
     covers: {
-      1: "https://www.ching-win.com.tw//upload_files/fonlego-rwd/prodpic/D_10245901.jpg",
-      2: "https://www.ching-win.com.tw//upload_files/fonlego-rwd/prodpic/D_10245902.jpg",
-      3: "https://www.ching-win.com.tw//upload_files/fonlego-rwd/prodpic/D_10245903.jpg",
-      4: "https://www.ching-win.com.tw//upload_files/fonlego-rwd/prodpic/D_10245904.jpg",
-      5: "https://www.ching-win.com.tw//upload_files/fonlego-rwd/prodpic/D_10245905(1).jpg",
-      6: "https://www.ching-win.com.tw//upload_files/fonlego-rwd/prodpic/D_10245906.jpg",
-      7: "https://www.ching-win.com.tw//upload_files/fonlego-rwd/prodpic/D_10245907.jpg",
-      8: "https://www.ching-win.com.tw//upload_files/fonlego-rwd/prodpic/D_10245908.jpg",
-      9: "https://www.ching-win.com.tw//upload_files/fonlego-rwd/prodpic/D_10245909.jpg",
-      10: "https://www.ching-win.com.tw//upload_files/fonlego-rwd/prodpic/D_10245910.jpg",
-      11: "https://www.ching-win.com.tw//upload_files/fonlego-rwd/prodpic/D_10245911.jpg",
-      12: "https://www.ching-win.com.tw//upload_files/fonlego-rwd/prodpic/D_10245912.jpg"
+      1: "https://s2.eslite.com/unsafe/fit-in/x900/s.eslite.com/upload/product/o/2681479515004/702742.jpg",
+      2: "https://s2.eslite.com/unsafe/fit-in/x900/s.eslite.com/upload/product/o/2681479517008/702740.jpg",
+      3: "https://s2.eslite.com/unsafe/fit-in/x900/s.eslite.com/upload/product/o/2681488480003/709718.jpg",
+      4: "https://s2.eslite.com/unsafe/fit-in/x900/s.eslite.com/upload/product/o/2681501890000/718620.jpg",
+      5: "https://s2.eslite.com/unsafe/fit-in/x900/s.eslite.com/upload/product/o/2681513177007/726581.jpg",
+      6: "https://s2.eslite.com/unsafe/fit-in/x900/s.eslite.com/upload/product/o/2681533051004/742501.jpg",
+      7: "https://s2.eslite.com/unsafe/fit-in/x900/s.eslite.com/upload/product/o/2681707834006/ec1649659.jpg",
+      8: "https://s2.eslite.com/unsafe/fit-in/x900/s.eslite.com/upload/product/o/2681853357008/20200123032419944616.jpg",
+      9: "https://s2.eslite.com/unsafe/fit-in/x900/s.eslite.com/upload/product/o/2681975418007/20210126033700976857.jpg",
+      10: "https://s2.eslite.com/unsafe/fit-in/x900/s.eslite.com/upload/product/o/2682122210000/20220114040139486940.jpg",
+      11: "https://s2.eslite.com/unsafe/fit-in/x900/s.eslite.com/upload/product/o/2682325977007/20230110041046291139.jpg",
+      12: "https://s2.eslite.com/unsafe/fit-in/x900/s.eslite.com/b2b/vendor/vendor172017708664820240705185809/mainCoverImage1_1284340.jpg",
+      13: "https://s2.eslite.com/unsafe/fit-in/x900/s.eslite.com/b2b/vendor/vendor175271991661020250717103838/mainCoverImage1_1478251.jpg"
     },
   }),
 
