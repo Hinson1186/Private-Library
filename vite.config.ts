@@ -7,8 +7,8 @@ export default defineConfig(({ mode }) => {
   
   return {
     plugins: [react()],
-    // 使用相對路徑，這樣不管儲存庫名稱是什麼都能正常運作
-    base: './',
+    // 明確設定 GitHub Pages 的子路徑
+    base: '/Private-Library/',
     resolve: {
       alias: {
         '@': '/',
